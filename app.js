@@ -244,11 +244,11 @@ app.delete("/user/contacts/:id", async (req, res) => {
 
 //Credenciais
 const db = process.env.DB_PASS
-const URL = process.env.URL
+const url = process.env.PORT || 3001;
 mongoose.connect(`${db}`)
   .then(() => {
 
-    app.listen(process.env.PORT || URL)
+    app.listen(url)
     console.log('Conectou ao banco!')
   }
   ).catch((err) => console.log(err))
