@@ -243,10 +243,9 @@ app.delete("/user/contacts/:id", async (req, res) => {
 
 
 //Credenciais
-const dbUser = process.env.DB_USER
-const dbPass = process.env.DB_PASS
+const db = process.env.DB_PASS
 
-mongoose.connect(`mongodb+srv://${dbUser}:${dbPass}@teste1.l29a3o8.mongodb.net/?retryWrites=true&w=majority`)
+mongoose.connect(`${db}`)
   .then(() => {
 
     app.listen(3001)
