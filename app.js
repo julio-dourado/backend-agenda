@@ -248,7 +248,7 @@ const URL = process.env.URL
 mongoose.connect(`${db}`)
   .then(() => {
 
-    app.listen(URL)
+    app.listen(process.env.PORT || URL)
     console.log('Conectou ao banco!')
   }
   ).catch((err) => console.log(err))
